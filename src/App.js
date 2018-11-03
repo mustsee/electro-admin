@@ -1,14 +1,21 @@
-import React, { Component } from 'react';
+import React, { useEffect } from 'react';
+import axios from 'axios';
 import './App.css';
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
+function App() {
+  const URI = 'http://localhost:8000';
 
-      </div>
-    );
-  }
+  useEffect(() => {
+    axios.get(URI + '/api/pieces').then((res) => {
+      console.log('res', res.data);
+    });
+  });
+
+  return (
+    <div className="App">
+      Connection to API.
+    </div>
+  );
 }
 
 export default App;
