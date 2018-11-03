@@ -1,20 +1,20 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Table } from 'reactstrap';
+import TableRow from './components/TableRow';
 import './App.css';
-
-const searchYoutube = (genre) => {
-  console.log('searchYoutube', genre.target.innerHTML);
-};
-
 
 function App() {
   const URI = 'http://localhost:8000';
-  const [genres, setGenres] = useState([]);
+  const [pieces, setPieces] = useState([]);
+
+  const searchYoutube = (payload) => {
+    console.log('searchYoutube', payload);
+  };
 
   useEffect(() => {
     axios.get(URI + '/api/pieces').then((res) => {
-      setGenres(res.data);
+      setPieces(res.data);
     });
   }, []);
 
@@ -31,16 +31,13 @@ function App() {
                 <th>artist name</th>
                 <th>piece</th>
                 <th>type</th>
-                <th>has ids</th>
+                <th>has video ids</th>
               </tr>
             </thead>
             <tbody>
             {
-              genres.map((genre, index) =>
-                <tr key={genre.name} onClick={(genre) => searchYoutube(genre)}>
-                  <th scope="row">{ index + 1 }</th>
-                  <td>{genre.name}</td>
-                </tr>
+              pieces.map((piece, index) =>
+                <TableRow key={piece.title} piece={piece} index={index} onTableRowClick={searchYoutube}/>
               )
             }
             </tbody>
