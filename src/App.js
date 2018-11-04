@@ -2,11 +2,13 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Table } from 'reactstrap';
 import TableRow from './components/TableRow';
+import YoutubePlayer from './components/YoutubePlayer';
 import './App.css';
 
 function App() {
   const URI = 'http://localhost:8000';
   const [pieces, setPieces] = useState([]);
+  const [videoID, setVideoID] = useState(null);
 
   const searchYoutube = (payload) => {
     console.log('searchYoutube', payload);
@@ -21,6 +23,11 @@ function App() {
   return (
     <div className="container-fluid">
       <div className="bar">Admin - electro story</div>
+      <div className="row">
+        <div className="offset-1 col-10 offset-1 YTPlayer">
+          <YoutubePlayer videoID={videoID}/>
+        </div>
+      </div>
       <div className="row">
         <div className="offset-1 col-10 offset-1">
           <Table hover>

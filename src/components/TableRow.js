@@ -26,7 +26,6 @@ function TableRow({ piece, index, onTableRowClick }) {
       <td>{piece.type}</td>
       <td>{piece.hasVideoId ? 'true' : 'false'}</td>
     </tr>
-
   );
 }
 
