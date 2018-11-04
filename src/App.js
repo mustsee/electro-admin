@@ -11,12 +11,9 @@ function App() {
   const [pieces, setPieces] = useState([]);
   const [videoID, setVideoID] = useState(null);
   const [info, setInfo] = useState({});
-  const [genre, setGenre] = useState('');
 
   const searchYoutube = (payload) => {
-    console.log('pp', payload);
     setInfo(payload);
-    setGenre(payload.genre);
   };
 
   useEffect(() => {
@@ -28,9 +25,11 @@ function App() {
   return (
     <div className="container-fluid">
       <div className="bar">Admin - electro story</div>
-      <div className="row">
-        <div className="offset-1 col-10 offset-1 YTPlayer">
+      <div className="row wrapper">
+        <div className="offset-1 col-5 YTPlayer">
           <YoutubePlayer videoID={videoID}/>
+        </div>
+        <div className="col-5">
           <Info info={info}/>
         </div>
       </div>

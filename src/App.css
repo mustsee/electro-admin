@@ -12,9 +12,14 @@ tbody tr:hover {
   cursor:  pointer;
 }
 
-.YTPlayer {
+.wrapper {
   margin-bottom: 20px;
+}
+
+.YTPlayer {
   display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .placeholderYTPlayer {
