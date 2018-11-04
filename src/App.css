@@ -14,6 +14,7 @@ tbody tr:hover {
 
 .YTPlayer {
   margin-bottom: 20px;
+  display: flex;
 }
 
 .placeholderYTPlayer {
@@ -25,4 +26,8 @@ tbody tr:hover {
   background-color: #e5e5e5;
   font-size: 20px;
   font-style: italic;
+}
+
+.info {
+  margin-left: 20px;
 }

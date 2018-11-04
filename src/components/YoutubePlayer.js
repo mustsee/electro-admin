@@ -13,7 +13,6 @@ function YoutubePlayer({videoID}) {
       <div className="placeholderYTPlayer">
         No video loaded yet.
       </div>
-
   )
 }
 
