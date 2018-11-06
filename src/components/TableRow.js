@@ -25,6 +25,7 @@ function TableRow({ piece, index, onTableRowClick }) {
       <td>{piece.title}</td>
       <td>{piece.type}</td>
       <td>{piece.hasVideoId ? 'true' : 'false'}</td>
+      <td>{piece.noRelevantId ? 'true' : 'false'}</td>
     </tr>
   );
 }

@@ -36,3 +36,15 @@ tbody tr:hover {
 .info {
   margin-left: 20px;
 }
+
+.info Button, span {
+  margin-right: 20px;
+}
+
+.info .videoInfos {
+  min-height: 160px;
+}
+
+.info div > span {
+  text-decoration: underline;
+}
